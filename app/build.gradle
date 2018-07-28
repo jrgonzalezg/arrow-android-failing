@@ -10,10 +10,15 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "arrow.myapplication"
-        minSdkVersion 19
+
+        minSdkVersion 26
         targetSdkVersion 27
+
+        multiDexEnabled true
+
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -37,6 +42,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    // Arrow dependencies (main)
     kapt "io.arrow-kt:arrow-annotations-processor:$arrow_version"
     implementation "io.arrow-kt:arrow-core:$arrow_version"
     implementation "io.arrow-kt:arrow-data:$arrow_version"
@@ -44,4 +50,15 @@ dependencies {
     implementation "io.arrow-kt:arrow-instances-data:$arrow_version"
     implementation "io.arrow-kt:arrow-syntax:$arrow_version"
     implementation "io.arrow-kt:arrow-typeclasses:$arrow_version"
+
+    // Arrow dependencies (optional)
+    implementation "io.arrow-kt:arrow-effects:$arrow_version"
+    implementation "io.arrow-kt:arrow-effects-kotlinx-coroutines:$arrow_version"
+    //implementation "io.arrow-kt:arrow-effects-reactor:$arrow_version"
+    implementation "io.arrow-kt:arrow-effects-rx2:$arrow_version"
+    implementation "io.arrow-kt:arrow-free:$arrow_version"
+    implementation "io.arrow-kt:arrow-generic:$arrow_version"
+    implementation "io.arrow-kt:arrow-mtl:$arrow_version"
+    implementation "io.arrow-kt:arrow-optics:$arrow_version"
+    implementation "io.arrow-kt:arrow-recursion:$arrow_version"
 }
